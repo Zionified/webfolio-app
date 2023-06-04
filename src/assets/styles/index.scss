@@ -1,0 +1,25 @@
+@import url(./normalize.css);
+@import url(./theme.scss);
+@font-face {
+    font-family: "Inter";
+    src: url(../fonts/Inter/Inter-Regular.ttf);
+}
+@font-face {
+    font-family: "Inter_Bold";
+    src: url(../fonts/Inter/Inter-Medium.ttf);
+}
+@font-face {
+    font-family: "Inter_Fallback";
+    src: local("Arial");
+    ascent-override: 90%;
+    descent-override: 22.43%;
+    line-gap-override: 0%;
+    size-adjust: 107.64%;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-feature-settings: var(--font-feature-settings);
+}
