@@ -1,26 +1,49 @@
 import { css } from "@emotion/css"
 import styled from "@emotion/styled"
-import { ReactNode } from "react"
+import { ReactNode, useEffect } from "react"
+import type { MouseEventHandler } from "react"
 
 type NavProps = {
     children?: ReactNode
 }
 
-type NavPropsItem = {
+type NavItemProps = {
     active?: boolean
     children?: ReactNode
+    onClick?: MouseEventHandler<HTMLDivElement>
 }
 
-const NavItem = ({ active, children }: NavPropsItem) => {
+const NavItem = ({ active, children, onClick }: NavItemProps) => {
     return (
-        <div className={`nav-item ${active ? "active" : ""}`}>
+        <div className={`nav-item ${active ? "active" : ""}`} onClick={onClick}>
             <span className="nav-item-indicator"></span>
             <span className="nav-item-name">{children}</span>
         </div>
     )
 }
 
-const Nav = ({ children }: NavProps) => {
+
+
+const Nav = () => {
+    const scrollByElementId = (elementId: string) => {
+        var element = document.getElementById(elementId)
+        if (element) {
+            window.scrollTo({
+                'top': element.offsetTop-96,
+                'behavior': 'smooth'
+            })
+        }
+    }
+
+    useEffect(() => {
+        const handleScroll = (e: any) => {
+            console.log(e.target.body)
+        }
+        window.addEventListener("scroll", handleScroll, true)
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        }
+    })
     return (
         <nav
             className={css`
@@ -83,7 +106,15 @@ const Nav = ({ children }: NavProps) => {
                 }
             `}
         >
-            {children}
+            <Nav.Item onClick={() => scrollByElementId("about")}>
+                ABOUT
+            </Nav.Item>
+            <Nav.Item onClick={() => scrollByElementId("experience")}>
+                EXPERIENCE
+            </Nav.Item>
+            <Nav.Item onClick={() => scrollByElementId("projects")}>
+                PROJECTS
+            </Nav.Item>
         </nav>
     )
 }

@@ -1,6 +1,7 @@
 import { css } from "@emotion/css"
 import styled from "@emotion/styled"
 import Nav from "./Nav"
+import SocialLinks from "./SocialLinks"
 
 const Title = styled.h1`
     font-size: 2.25rem;
@@ -40,10 +41,13 @@ const ShortIntro = styled.p`
 `
 
 const Header = () => {
+    
+
     return (
         <header
             className={css`
                 @media (min-width: 1024px) {
+                    box-sizing: border-box;
                     padding-top: 6rem;
                     padding-bottom: 6rem;
                     flex-direction: column;
@@ -57,21 +61,15 @@ const Header = () => {
             `}
         >
             <div>
-                <Title>Brittany Chiang</Title>
-                <Subtitle>Lead Engineer at Upstatement</Subtitle>
+                <Title>Zixuan Zheng</Title>
+                <Subtitle>Computer Science student at Carnegie Mellon University</Subtitle>
                 <ShortIntro>
                     I build accessible, inclusive products and digital
                     experiences for the web.
                 </ShortIntro>
-                <Nav>
-                    <Nav.Item>ABOUT</Nav.Item>
-                    <Nav.Item>EXPERIENCE</Nav.Item>
-                    <Nav.Item>PROJECTS</Nav.Item>
-                </Nav>
-                {/* <SocialLinks>
-
-                </SocialLinks> */}
+                <Nav></Nav>
             </div>
+            <SocialLinks></SocialLinks>
         </header>
     )
 }
