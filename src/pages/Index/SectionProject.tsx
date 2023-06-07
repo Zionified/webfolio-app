@@ -78,7 +78,7 @@ const ProjectName = styled.span`
     border-radius: 0.25rem;
 `
 
-const ProjectDescription = styled.p`
+const ProjectDescription = styled.div`
     line-height: 1.5;
     font-size: 0.875rem;
     margin: 0;

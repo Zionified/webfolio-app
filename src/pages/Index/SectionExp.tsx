@@ -78,7 +78,7 @@ const JobTitle = styled.div`
     font-weight: 500;
 `
 
-const JobDescription = styled.p`
+const JobDescription = styled.div`
     line-height: 1.5;
     font-size: 0.875rem;
     margin: 0;
