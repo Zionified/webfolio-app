@@ -112,7 +112,7 @@ type Props = {
     range: string
     roles: string[]
     company: string
-    description: string
+    descriptions: string[]
     tags: string[]
 }
 
@@ -120,7 +120,7 @@ const SectionExperience = ({
     range,
     roles,
     company,
-    description,
+    descriptions,
     tags,
 }: Props) => {
     return (
@@ -205,7 +205,14 @@ const SectionExperience = ({
                         .map((role, idx) => {
                             return <JobTitle key={idx}>{role}</JobTitle>
                         })}
-                <JobDescription>{description}</JobDescription>
+                <JobDescription>
+                    {descriptions.length &&
+                     descriptions.map((description, idx) => {
+                        return (
+                            <p key={idx}>{description}</p>
+                        )
+                     })}
+                </JobDescription>
                 {tags && tags.length && (
                     <Tags>
                         {tags.map((tag, idx) => {

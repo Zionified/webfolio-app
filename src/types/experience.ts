@@ -2,6 +2,6 @@ export type Experience = {
     range: string
     roles: string[]
     company: string
-    description: string
+    descriptions: string[]
     tags: string[]
 }

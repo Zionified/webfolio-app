@@ -119,7 +119,7 @@ const Status = styled.div`
 
 type Props = {
     title: string
-    description: string
+    descriptions: string[]
     image: string
     starCount?: number
     installCount?: number
@@ -128,7 +128,7 @@ type Props = {
 
 const SectionProject = ({
     title,
-    description,
+    descriptions,
     image,
     starCount,
     installCount,
@@ -212,7 +212,12 @@ const SectionProject = ({
                         />
                     </ProjectName>
                 </ProjectLink>
-                <ProjectDescription>{description}</ProjectDescription>
+                <ProjectDescription>
+                    {descriptions.length &&
+                        descriptions.map((description, idx) => {
+                            return <p key={idx}>{description}</p>
+                        })}
+                </ProjectDescription>
                 {(starCount || installCount) && (
                     <div
                         className={css`

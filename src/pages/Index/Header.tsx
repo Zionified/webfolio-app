@@ -41,8 +41,6 @@ const ShortIntro = styled.p`
 `
 
 const Header = () => {
-    
-
     return (
         <header
             className={css`
@@ -61,8 +59,19 @@ const Header = () => {
             `}
         >
             <div>
-                <Title>Zixuan Zheng</Title>
-                <Subtitle>Computer Science student at Carnegie Mellon University</Subtitle>
+                <Title
+                    onClick={() =>
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                        })
+                    }
+                >
+                    Zixuan Zheng
+                </Title>
+                <Subtitle>
+                    Computer Science student at Carnegie Mellon University
+                </Subtitle>
                 <ShortIntro>
                     I build accessible, inclusive products and digital
                     experiences for the web.

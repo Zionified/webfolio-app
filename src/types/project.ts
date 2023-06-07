@@ -1,6 +1,6 @@
 export type Project = {
     title: string,
-    description: string,
+    descriptions: string[],
     image: string,
     starCount?: number,
     installCount?: number,

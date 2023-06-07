@@ -1,6 +1,6 @@
 import { css } from "@emotion/css"
 import styled from "@emotion/styled"
-import { ReactNode, useEffect } from "react"
+import { ReactNode, useEffect, useState } from "react"
 import type { MouseEventHandler } from "react"
 
 type NavProps = {
@@ -22,24 +22,33 @@ const NavItem = ({ active, children, onClick }: NavItemProps) => {
     )
 }
 
-
-
 const Nav = () => {
+    const [activeNavName, setActiveNavName] = useState("about")
+
     const scrollByElementId = (elementId: string) => {
         var element = document.getElementById(elementId)
         if (element) {
             window.scrollTo({
-                'top': element.offsetTop-96,
-                'behavior': 'smooth'
+                top: element.offsetTop - 96,
+                behavior: "smooth",
             })
         }
     }
 
     useEffect(() => {
         const handleScroll = (e: any) => {
-            console.log(e.target.body)
+            const elements = ["projects", "experience", "about"]
+                .map((id) => document.getElementById(id))
+                .filter((element) => element)
+                .map((element) => element!)
+                .filter(
+                    (element) => element.getBoundingClientRect().top - 140 <= 0
+                )
+            if (elements.length > 0) {
+                setActiveNavName(elements[0].id)
+            }
         }
-        window.addEventListener("scroll", handleScroll, true)
+        window.addEventListener("scroll", handleScroll)
         return () => {
             window.removeEventListener("scroll", handleScroll)
         }
@@ -106,13 +115,13 @@ const Nav = () => {
                 }
             `}
         >
-            <Nav.Item onClick={() => scrollByElementId("about")}>
+            <Nav.Item onClick={() => scrollByElementId("about")} active={activeNavName === "about"}>
                 ABOUT
             </Nav.Item>
-            <Nav.Item onClick={() => scrollByElementId("experience")}>
+            <Nav.Item onClick={() => scrollByElementId("experience")} active={activeNavName === "experience"}>
                 EXPERIENCE
             </Nav.Item>
-            <Nav.Item onClick={() => scrollByElementId("projects")}>
+            <Nav.Item onClick={() => scrollByElementId("projects")} active={activeNavName === "projects"}>
                 PROJECTS
             </Nav.Item>
         </nav>
