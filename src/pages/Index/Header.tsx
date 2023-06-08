@@ -2,6 +2,9 @@ import { css } from "@emotion/css"
 import styled from "@emotion/styled"
 import Nav from "./Nav"
 import SocialLinks from "./SocialLinks"
+import imgHead from "@/assets/images/headImg.jpeg"
+import Tag from "@/components/Tag"
+import SkillsScreen from "./SkillsScreen"
 
 const Title = styled.h1`
     font-size: 2.25rem;
@@ -39,7 +42,6 @@ const ShortIntro = styled.p`
     margin: 0;
     margin-top: 1rem;
 `
-
 const Header = () => {
     return (
         <header
@@ -59,6 +61,19 @@ const Header = () => {
             `}
         >
             <div>
+                <img
+                    src={imgHead}
+                    className={css`
+                        display: block;
+                        width: 300px;
+                        height: 300px;
+                        margin-top: 10px;
+                        @media (min-width: 1024px) {
+                            display: none;
+                        }
+                    `}
+                    alt="Zixuan Zheng"
+                ></img>
                 <Title
                     onClick={() =>
                         window.scrollTo({
@@ -66,18 +81,66 @@ const Header = () => {
                             behavior: "smooth",
                         })
                     }
+                    className={css`
+                        display: none;
+                        @media (min-width: 1024px) {
+                            display: flex;
+                            align-items: center;
+                        }
+                    `}
                 >
                     Zixuan Zheng
+                    <img
+                        src={imgHead}
+                        className={css`
+                            display: none;
+                            @media (min-width: 1024px) {
+                                border-radius: 65px;
+                                border: 2px solid var(--text-color-fade);
+                                display: inline-block;
+                                width: 130px;
+                                height: 130px;
+                                margin-left: 20px;
+                            }
+                        `}
+                        alt="Zixuan Zheng"
+                    ></img>
                 </Title>
                 <Subtitle>
                     Computer Science student at Carnegie Mellon University
                 </Subtitle>
                 <ShortIntro>
-                    I build accessible, inclusive products and digital
-                    experiences for the web.
+                    Full stack developer and machine learning enthusiast
                 </ShortIntro>
                 <Nav></Nav>
             </div>
+            <SkillsScreen></SkillsScreen>
+            {/* <div
+                className={css`
+                    padding-right: 70px;
+                `}
+                id="skills-screen"
+            >
+                
+                <Tag>
+                    <Tag.Item>Python</Tag.Item>
+                    <Tag.Item>Java</Tag.Item>
+                    <Tag.Item>C</Tag.Item>
+                    <Tag.Item>React</Tag.Item>
+                    <Tag.Item>Typescript</Tag.Item>
+                    <Tag.Item>Vue</Tag.Item>
+                    <Tag.Item>Django</Tag.Item>
+                    <Tag.Item>Tensorflow</Tag.Item>
+                    <Tag.Item>HTML</Tag.Item>
+                    <Tag.Item>CSS</Tag.Item>
+                    <Tag.Item>Standard ML</Tag.Item>
+                    <Tag.Item>NLP</Tag.Item>
+                    <Tag.Item>Blender</Tag.Item>
+                    <Tag.Item>React</Tag.Item>
+                    <Tag.Item>React</Tag.Item>
+                    <Tag.Item>React</Tag.Item>
+                </Tag>
+            </div> */}
             <SocialLinks></SocialLinks>
         </header>
     )

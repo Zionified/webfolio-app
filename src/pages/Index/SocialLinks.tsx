@@ -1,7 +1,7 @@
 import { css } from "@emotion/css"
 import styled from "@emotion/styled"
 import Icon from "@mdi/react"
-import { mdiGithub, mdiInstagram, mdiTwitter, mdiLinkedin } from "@mdi/js"
+import { mdiEmail, mdiGithub, mdiLinkedin } from "@mdi/js"
 
 const Contact = styled.a`
     font-size: 0.75rem;
@@ -32,13 +32,13 @@ const SocialLinks = () => {
                 <Icon className="icon" path={mdiGithub} size={1.2} />
             </Contact>
             {/* <Contact>
-                <Icon className="icon" path={mdiInstagram} size={1.2} />
-            </Contact> */}
-            {/* <Contact>
                 <Icon className="icon" path={mdiTwitter} size={1.2} />
             </Contact> */}
             <Contact href="https://www.linkedin.com/in/zixuan-zheng-03">
                 <Icon className="icon" path={mdiLinkedin} size={1.2} />
+            </Contact>
+            <Contact href="mailto:zzheng3@andrew.cmu.edu">
+                <Icon className="icon" path={mdiEmail} size={1.2} />
             </Contact>
         </div>
     )

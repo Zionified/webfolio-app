@@ -1,10 +1,14 @@
 :root {
+    --color-divider: var(--text-color-fade);
+    
     --background-color: rgb(15, 23, 42);
     --background-color-primary: rgba(45, 212, 191, 0.1);
     --background-color-fade: rgba(30, 41, 59, 0.5);
+    --background-color-header: rgb(40, 42, 54);
 
     --text-color: rgb(148, 163, 184);
     --text-color-bold: rgb(226, 232, 240);
+    // --text-color-primary: rgb(255, 204, 0);
     --text-color-primary: rgb(94, 234, 212);
     --text-color-fade: rgb(100, 116, 139);
     

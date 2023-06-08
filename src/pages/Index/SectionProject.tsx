@@ -2,7 +2,6 @@ import { css } from "@emotion/css"
 import styled from "@emotion/styled"
 import { mdiArrowTopRight, mdiStar, mdiTrayArrowDown } from "@mdi/js"
 import Icon from "@mdi/react"
-import ImgCourseCard from "@/assets/images/course-card.webp"
 
 const ProjectShader = styled.div`
     display: none;

@@ -1,11 +1,6 @@
 import { css } from "@emotion/css"
-import styled from "@emotion/styled"
 import { ReactNode, useEffect, useState } from "react"
 import type { MouseEventHandler } from "react"
-
-type NavProps = {
-    children?: ReactNode
-}
 
 type NavItemProps = {
     active?: boolean
@@ -25,7 +20,14 @@ const NavItem = ({ active, children, onClick }: NavItemProps) => {
 const Nav = () => {
     const [activeNavName, setActiveNavName] = useState("about")
 
-    const scrollByElementId = (elementId: string) => {
+    const scrollByElementId = (elementId: "about" | "experience" | "projects") => {
+        if (elementId === "about") {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            })
+            return
+        }
         var element = document.getElementById(elementId)
         if (element) {
             window.scrollTo({
