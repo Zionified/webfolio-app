@@ -8,15 +8,12 @@ const Contact = styled.a`
     line-height: 1rem;
     margin-right: 1.25rem;
     color: var(--text-color-fade);
-
-    .icon {
-        cursor: pointer;
-        :hover {
-            color: var(--text-color-bold);
-        }
-    }
 `
 
+const BrandIcon = styled(Icon)`
+    cursor: pointer;
+    color: var(--text-color);
+`
 const SocialLinks = () => {
     return (
         <div
@@ -29,16 +26,40 @@ const SocialLinks = () => {
             `}
         >
             <Contact href="https://github.com/Zionified">
-                <Icon className="icon" path={mdiGithub} size={1.2} />
+                <BrandIcon
+                    path={mdiGithub}
+                    size={1.2}
+                    className={css`
+                        :hover {
+                            color: var(--color-icon-github-hover);
+                        }
+                    `}
+                />
             </Contact>
             {/* <Contact>
                 <Icon className="icon" path={mdiTwitter} size={1.2} />
             </Contact> */}
             <Contact href="https://www.linkedin.com/in/zixuan-zheng-03">
-                <Icon className="icon" path={mdiLinkedin} size={1.2} />
+                <BrandIcon
+                    path={mdiLinkedin}
+                    size={1.2}
+                    className={css`
+                        :hover {
+                            color: var(--color-icon-linkedin-hover);
+                        }
+                    `}
+                />
             </Contact>
             <Contact href="mailto:zzheng3@andrew.cmu.edu">
-                <Icon className="icon" path={mdiEmail} size={1.2} />
+                <BrandIcon
+                    path={mdiEmail}
+                    size={1.2}
+                    className={css`
+                        :hover {
+                            color: var(--color-icon-mail-hover);
+                        }
+                    `}
+                />
             </Contact>
         </div>
     )

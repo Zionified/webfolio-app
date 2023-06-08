@@ -51,6 +51,7 @@ const IMG = styled.img`
     width: 200px;
     aspect-ratio: auto 200 / 48;
     overflow: clip;
+    z-index: 2;
 `
 
 const Content = styled.div`
@@ -160,8 +161,9 @@ const SectionProject = ({
                 :hover {
                     opacity: 1 !important;
 
-                    .projectImg {
+                    .project-img {
                         border: 2px solid var(--color-img-border-hover);
+                        
                     }
                     .shader {
                         background-color: var(--background-color-fade);
@@ -179,7 +181,7 @@ const SectionProject = ({
             `}
         >
             <ProjectShader className="shader"></ProjectShader>
-            <IMG src={image} className="projectImg"></IMG>
+            <IMG src={image} className="project-img"></IMG>
             <Content>
                 <ProjectLink>
                     <ProjectName className="title">

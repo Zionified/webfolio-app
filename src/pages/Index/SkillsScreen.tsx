@@ -46,6 +46,7 @@ const SkillsScreen = () => {
                     padding-right: 70px;
                     height: 116px;
                     margin-right: 80px;
+                    margin-top: 20px;
                 }
             `}
             id="skills-screen"
