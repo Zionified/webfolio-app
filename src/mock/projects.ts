@@ -11,7 +11,7 @@ export const projects: Project[] = [
             "Designed a well-structured database schema utilizing Python-based ORM library SQLAlchemy to ensure efficient data storage and management",
             "Implemented the backend functionality using FastAPI framework to enable smooth data retrieval, manipulation, and secure authentication; utilized Axios for seamless communication with the backend API",
         ],
-        image: "https://brittanychiang.com/_next/image?url=%2Fimages%2Fprojects%2Fcourse-card.png&w=640&q=75",
+        image: "https://pbs.twimg.com/profile_images/446356636710363136/OYIaJ1KK_400x400.png",
         tags:["Typescript", "React", "SQLAlchemy", "Python", "FastAPI", "Responsive Web Design"]
     },
     {

@@ -43,15 +43,19 @@ const IMG = styled.img`
     }
     margin-top: 0.4rem;
     border: 2px solid var(--color-img-border);
-    border-radius: 0.25rem;
+    border-radius: 0.3rem;
     max-width: 100%;
     height: 80px;
     /* height: auto; */
     vertical-align: middle;
-    width: 120px;
+    width: 100px;
     aspect-ratio: auto 200 / 48;
     overflow: clip;
     z-index: 2;
+
+    :hover {
+        border: 2px solid var(--color-img-border-hover);
+    }
 `
 
 const Content = styled.div`
@@ -129,7 +133,7 @@ type Props = {
 
 const SectionProject = ({
     title,
-    name, 
+    name,
     descriptions,
     image,
     starCount,
@@ -166,7 +170,6 @@ const SectionProject = ({
 
                     .project-img {
                         border: 2px solid var(--color-img-border-hover);
-                        
                     }
                     .shader {
                         background-color: var(--background-color-fade);
