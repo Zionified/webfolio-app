@@ -1,4 +1,5 @@
 export type About = {
-    url?: string,
+    target?: string,
+    type?: "url" | "anchor"
     text: string,
 }

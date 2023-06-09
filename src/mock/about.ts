@@ -3,28 +3,26 @@ import type { About } from "@/types/about"
 export const abouts: About[][] = [
     [
         {
-            text: "Back in 2012, I decided to try my hand at creating custom Tumblr themes and tumbled head first into the rabbit hole of coding and web development. Fast-forward to today, and I’ve had the privilege of building software for an ",
+            text: "Since high school, I have been actively strengthening my software engineering skills and working to become a better global citizen. ",
+        },
+        { text: "My first full stack project of " },
+        {
+            text: "LatinGuru: Motto",
+            type: "anchor",
+            target: "project-latinguru"
         },
         {
-            text: "advertising agency",
-            url: "https://us.mullenlowe.com/",
-        },
-        { text: ", and a " },
-        {
-            text: "start up",
-            url: "https://us.mullenlowe.com/",
+            text: " offers me a vision where my creativity can prevail and contribute to real world impacts, and I was deeply intrigued. ",
         },
     ],
     [
         {
-            text: "My main focus these days is building products and leading projects for our clients at ",
-        },
-        {
-            text: "Upstatement.",
-            url: "https://upstatement.com/",
-        },
-        {
-            text: "In my free time I've also released an online video course that covers everything you need to know to build a web app with the Spotify API.",
+            text: "As a junior at Carnegie Mellon University, I continue to become a better version of myself, actively involved in projects and research, ranging from web application to natural language processing to robotics. ",
         },
     ],
+    [
+        {
+            text: "In my free time, I am also an amateur golfer ⛳️ and a movie lover 🎬. ",
+        },
+    ]
 ]

@@ -68,6 +68,7 @@ const RoleAndCompany = styled.span`
     @media (min-width: 1024px) {
         display: block;
     }
+    font-weight: 900;
     border-radius: 0.25rem;
 `
 
@@ -171,7 +172,7 @@ const SectionExperience = ({
                 <TitleLink>
                     <RoleAndCompany className="title">
                         {roles && roles.length ? `${roles[0]} · ${company}` : company}
-                        <Icon
+                        {/* <Icon
                             path={mdiArrowTopRight}
                             size={0.6}
                             className={
@@ -195,7 +196,7 @@ const SectionExperience = ({
                                     position: relative;
                                 ` + " title-icon"
                             }
-                        />
+                        /> */}
                     </RoleAndCompany>
                 </TitleLink>
                 {roles &&
