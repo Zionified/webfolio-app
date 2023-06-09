@@ -38,7 +38,7 @@ const Subtitle = styled.h2`
 
 const ShortIntro = styled.p`
     line-height: 1.5;
-    max-width: 20rem;
+    max-width: 25rem;
     margin: 0;
     margin-top: 1rem;
 `
@@ -107,40 +107,15 @@ const Header = () => {
                     ></img>
                 </Title>
                 <Subtitle>
-                    Computer Science student at Carnegie Mellon University
+                    <div>Computer Science + Statistics & Machine Learning</div>
+                    <div>Carnegie Mellon University</div>
                 </Subtitle>
                 <ShortIntro>
-                    Full stack developer and machine learning enthusiast
+                    Machine Learning enthusiast, Web Developer, Golfer
                 </ShortIntro>
                 <Nav></Nav>
             </div>
             <SkillsScreen></SkillsScreen>
-            {/* <div
-                className={css`
-                    padding-right: 70px;
-                `}
-                id="skills-screen"
-            >
-                
-                <Tag>
-                    <Tag.Item>Python</Tag.Item>
-                    <Tag.Item>Java</Tag.Item>
-                    <Tag.Item>C</Tag.Item>
-                    <Tag.Item>React</Tag.Item>
-                    <Tag.Item>Typescript</Tag.Item>
-                    <Tag.Item>Vue</Tag.Item>
-                    <Tag.Item>Django</Tag.Item>
-                    <Tag.Item>Tensorflow</Tag.Item>
-                    <Tag.Item>HTML</Tag.Item>
-                    <Tag.Item>CSS</Tag.Item>
-                    <Tag.Item>Standard ML</Tag.Item>
-                    <Tag.Item>NLP</Tag.Item>
-                    <Tag.Item>Blender</Tag.Item>
-                    <Tag.Item>React</Tag.Item>
-                    <Tag.Item>React</Tag.Item>
-                    <Tag.Item>React</Tag.Item>
-                </Tag>
-            </div> */}
             <SocialLinks></SocialLinks>
         </header>
     )

@@ -45,10 +45,10 @@ const IMG = styled.img`
     border: 2px solid var(--color-img-border);
     border-radius: 0.25rem;
     max-width: 100%;
-    height: 48px;
+    height: 80px;
     /* height: auto; */
     vertical-align: middle;
-    width: 200px;
+    width: 120px;
     aspect-ratio: auto 200 / 48;
     overflow: clip;
     z-index: 2;
@@ -119,6 +119,7 @@ const Status = styled.div`
 
 type Props = {
     title: string
+    name: string
     descriptions: string[]
     image: string
     starCount?: number
@@ -128,6 +129,7 @@ type Props = {
 
 const SectionProject = ({
     title,
+    name, 
     descriptions,
     image,
     starCount,
@@ -136,6 +138,7 @@ const SectionProject = ({
 }: Props) => {
     return (
         <div
+            id={`project-${name}`}
             className={css`
                 cursor: pointer;
                 margin-bottom: 3rem;

@@ -24,15 +24,16 @@
 :root {
     --color-divider: var(--text-color-fade);
     
-    --background-color: rgb(255, 255, 255);
-    --background-color-primary: rgb(208, 216, 245);
+    --background-color: rgb(250, 238, 231);
+    --background-color-primary: rgba(208, 216, 245, .5);
     --background-color-fade: rgba(208, 216, 245, .3); 
-    --background-color-header: rgb(40, 42, 54);
+    --background-color-header: rgb(249, 223, 209);
 
     --text-color: rgb(54, 52, 77);
     --text-color-bold: rgb(54, 52, 77);
     // --text-color-primary: rgb(255, 204, 0);
-    --text-color-primary: #6747C7;
+    --text-color-primary: rgb(103, 61, 230);
+    // --text-color-primary: #8158fa
     --text-color-fade: rgb(100, 116, 139);
     
     --color-img-border: rgba(226, 232, 240, 0.1);
