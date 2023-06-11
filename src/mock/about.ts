@@ -22,7 +22,7 @@ export const abouts: About[][] = [
     ],
     [
         {
-            text: "In my free time, I am also an amateur golfer ⛳️ and a movie lover 🎬. ",
+            text: "In my free time, I am also a national level golf athlete ⛳️ and a movie lover 🎬. ",
         },
     ]
 ]
