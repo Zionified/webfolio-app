@@ -111,7 +111,7 @@ const Header = () => {
                     <div>Carnegie Mellon University</div>
                 </Subtitle>
                 <ShortIntro>
-                    Machine Learning Enthusiast🤖️, Web Developer💻, Golf Athlete🏌️
+                    Machine Learning Enthusiast🔮, Web Developer💻, Golf Athlete🏌️‍♀️
                 </ShortIntro>
                 <Nav></Nav>
             </div>
