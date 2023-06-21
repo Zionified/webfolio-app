@@ -1,10 +1,12 @@
 import { css } from "@emotion/css"
 import { useEffect, useState } from "react"
-import BulletScreen, { StyledBullet } from "rc-bullets"
+import BulletScreen from "rc-bullets"
 import Tag from "@/components/Tag"
-import { tags } from "@/mock/tags"
+import * as api from "@/requests"
+
 const SkillsScreen = () => {
     const [screen, setScreen] = useState<any>(null)
+    const [tags, setTags] = useState<string[]>([])
 
     useEffect(() => {
         setScreen(
@@ -16,6 +18,14 @@ const SkillsScreen = () => {
             })
         )
     }, [setScreen])
+
+    const refreshTags = async () => {
+        setTags(await api.listTags())
+    }
+
+    useEffect(() => {
+        refreshTags()
+    }, [setTags])
 
     // 当screen发生变化执行
     useEffect(() => {
@@ -35,7 +45,7 @@ const SkillsScreen = () => {
         return () => {
             clearInterval(intervalId)
         }
-    }, [screen])
+    }, [screen, tags])
 
     return (
         <div

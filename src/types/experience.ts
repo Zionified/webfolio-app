@@ -1,7 +1,9 @@
 export type Experience = {
-    range: string
+    id: number,
+    name: string,
+    timeline: string
     roles: string[]
     company: string
-    descriptions: string[]
+    description: string
     tags: string[]
 }

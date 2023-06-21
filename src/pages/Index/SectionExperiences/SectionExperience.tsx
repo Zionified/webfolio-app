@@ -1,9 +1,10 @@
 import { css } from "@emotion/css"
 import styled from "@emotion/styled"
-import { mdiArrowTopRight, mdiStar, mdiTrayArrowDown } from "@mdi/js"
-import Icon from "@mdi/react"
+// import Icon from "@mdi/react"
+// import { mdiArrowTopRight } from "@mdi/js"
+import { memo } from "react"
 
-const ProjectShader = styled.div`
+const ExperienceShader = styled.div`
     display: none;
 
     @media (min-width: 1024px) {
@@ -35,38 +36,27 @@ const ProjectShader = styled.div`
     transition-duration: 0.15s;
 `
 
-const IMG = styled.img`
-    color: transparent;
+const Header = styled.header`
     @media (min-width: 640px) {
         grid-column: span 2 / span 2;
-        order: 1;
     }
-    margin-top: 0.4rem;
-    border: 2px solid var(--color-img-border);
-    border-radius: 0.3rem;
-    max-width: 100%;
-    height: 80px;
-    /* height: auto; */
-    vertical-align: middle;
-    width: 100px;
-    aspect-ratio: auto 200 / 48;
-    overflow: clip;
-    z-index: 2;
-
-    :hover {
-        border: 2px solid var(--color-img-border-hover);
-    }
-`
-
-const Content = styled.div`
-    @media (min-width: 640px) {
-        grid-column: span 6 / span 6;
-        order: 2;
-    }
+    color: var(--text-color-fade);
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    padding-top: 0.5rem;
+    margin-bottom: 0.5rem;
     z-index: 10;
 `
 
-const ProjectLink = styled.a`
+const Content = styled.div`
+    grid-column: span 6 / span 6;
+    z-index: 10;
+`
+
+const TitleLink = styled.a`
     color: var(--text-color-bold);
     line-height: 1.25;
     font-weight: 500;
@@ -75,14 +65,22 @@ const ProjectLink = styled.a`
     display: inline-flex;
 `
 
-const ProjectName = styled.span`
+const RoleAndCompany = styled.span`
     @media (min-width: 1024px) {
         display: block;
     }
+    font-weight: 900;
     border-radius: 0.25rem;
 `
 
-const ProjectDescription = styled.div`
+const JobTitle = styled.div`
+    font-size: 16px;
+    color: var(--text-color-fade);
+    line-height: 1.375;
+    font-weight: 500;
+`
+
+const JobDescription = styled.div`
     line-height: 1.5;
     font-size: 0.875rem;
     margin: 0;
@@ -112,37 +110,28 @@ const Tag = styled.span`
     display: flex;
 `
 
-const Status = styled.div`
-    margin-top: 0.5rem;
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    color: var(--text-color-bold);
-`
-
 type Props = {
-    title: string
-    name: string
-    descriptions: string[]
-    image: string
-    starCount?: number
-    installCount?: number
-    tags?: string[]
+    id: number,
+    name: string,
+    timeline: string
+    roles: string[]
+    company: string
+    description: string
+    tags: string[]
 }
 
-const SectionProject = ({
-    title,
+const SectionExperience = memo(({
     name,
-    descriptions,
-    image,
-    starCount,
-    installCount,
+    timeline,
+    roles,
+    company,
+    description,
     tags,
 }: Props) => {
+    const descriptions = description.split("\n").map(line => line.trim()).filter(line => line)
+
     return (
-        <div
-            id={`project-${name}`}
+        <div id={name}
             className={css`
                 cursor: pointer;
                 margin-bottom: 3rem;
@@ -168,9 +157,6 @@ const SectionProject = ({
                 :hover {
                     opacity: 1 !important;
 
-                    .project-img {
-                        border: 2px solid var(--color-img-border-hover);
-                    }
                     .shader {
                         background-color: var(--background-color-fade);
                     }
@@ -186,13 +172,13 @@ const SectionProject = ({
                 }
             `}
         >
-            <ProjectShader className="shader"></ProjectShader>
-            <IMG src={image} className="project-img"></IMG>
+            <ExperienceShader className="shader"></ExperienceShader>
+            <Header>{timeline}</Header>
             <Content>
-                <ProjectLink>
-                    <ProjectName className="title">
-                        {title}
-                        <Icon
+                <TitleLink>
+                    <RoleAndCompany className="title">
+                        {roles && roles.length ? `${roles[0]} · ${company}` : company}
+                        {/* <Icon
                             path={mdiArrowTopRight}
                             size={0.6}
                             className={
@@ -216,53 +202,24 @@ const SectionProject = ({
                                     position: relative;
                                 ` + " title-icon"
                             }
-                        />
-                    </ProjectName>
-                </ProjectLink>
-                <ProjectDescription>
-                    {descriptions.length &&
-                        descriptions.map((description, idx) => {
-                            return <p key={idx}>{description}</p>
+                        /> */}
+                    </RoleAndCompany>
+                </TitleLink>
+                {roles &&
+                    roles.length &&
+                    roles
+                        .filter((_, idx) => idx > 0)
+                        .map((role, idx) => {
+                            return <JobTitle key={idx}>{role}</JobTitle>
                         })}
-                </ProjectDescription>
-                {(starCount || installCount) && (
-                    <div
-                        className={css`
-                            display: flex;
-                        `}
-                    >
-                        {starCount && (
-                            <Status>
-                                <Icon
-                                    path={mdiStar}
-                                    className={css`
-                                        width: 0.75rem;
-                                        height: 0.75rem;
-                                        margin-right: 0.25rem;
-                                    `}
-                                />
-                                {starCount}
-                            </Status>
-                        )}
-                        {installCount && (
-                            <Status>
-                                <Icon
-                                    path={mdiTrayArrowDown}
-                                    className={css`
-                                        margin-left: 0.5rem;
-                                        width: 1rem;
-                                        height: 1rem;
-                                        margin-right: 0.25rem;
-                                    `}
-                                />
-                                {installCount >= 1000
-                                    ? `${(installCount / 1000).toFixed(1)}k+`
-                                    : installCount}{" "}
-                                Installs
-                            </Status>
-                        )}
-                    </div>
-                )}
+                <JobDescription>
+                    {descriptions.length &&
+                     descriptions.map((description, idx) => {
+                        return (
+                            <p key={idx}>{description}</p>
+                        )
+                     })}
+                </JobDescription>
                 {tags && tags.length && (
                     <Tags>
                         {tags.map((tag, idx) => {
@@ -273,6 +230,6 @@ const SectionProject = ({
             </Content>
         </div>
     )
-}
+})
 
-export default SectionProject
+export default SectionExperience
