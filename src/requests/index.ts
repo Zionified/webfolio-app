@@ -3,7 +3,7 @@ import type { Article, Experience, Project, Pagination } from "@/types"
 
 export const listExperiences = async () => {
     const response = await axios.get("/api/v1/experiences")
-    console.log(response)
+    // console.log(response)
     return response.data.data.items as Experience[]
 }
 
