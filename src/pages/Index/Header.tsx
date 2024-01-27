@@ -107,11 +107,12 @@ const Header = () => {
                     ></img>
                 </Title>
                 <Subtitle>
-                    <div>Computer Science + Statistics & Machine Learning</div>
+                    <div>Computer Science + Statistics</div>
                     <div>Carnegie Mellon University</div>
                 </Subtitle>
                 <ShortIntro>
-                    Machine Learning Enthusiast🔮, Web Developer💻, Golf Athlete🏌️‍♀️
+                    Machine Learning Enthusiast🔮, Web Developer💻, Golf
+                    Athlete🏌️‍♀️
                 </ShortIntro>
                 <Nav></Nav>
             </div>
