@@ -39,7 +39,7 @@ const SocialLinks = () => {
             {/* <Contact>
                 <Icon className="icon" path={mdiTwitter} size={1.2} />
             </Contact> */}
-            <Contact href="https://www.linkedin.com/in/zixuan-zheng-03">
+            <Contact href="https://www.linkedin.com/in/zzheng3">
                 <BrandIcon
                     path={mdiLinkedin}
                     size={1.2}
