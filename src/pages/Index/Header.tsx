@@ -2,7 +2,7 @@ import { css } from "@emotion/css"
 import styled from "@emotion/styled"
 import Nav from "./Nav"
 import SocialLinks from "./SocialLinks"
-import imgHead from "@/assets/images/headImg.jpeg"
+import imgHead from "@/assets/images/headImg.png"
 import Tag from "@/components/Tag"
 import SkillsScreen from "./SkillsScreen"
 
@@ -111,7 +111,7 @@ const Header = () => {
                     <div>Carnegie Mellon University</div>
                 </Subtitle>
                 <ShortIntro>
-                    Machine Learning Enthusiast🔮, Web Developer💻, Golf
+                    Full-stack Developer💻, Machine Learning Enthusiast🔮, Golf
                     Athlete🏌️‍♀️
                 </ShortIntro>
                 <Nav></Nav>
